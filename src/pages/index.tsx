@@ -20,7 +20,7 @@ const Home = () => {
     <div className={styles.container}>
       <input
         type="text"
-        placeholder="otako"
+        placeholder="username"
         onChange={(event) => {
           setUserName(event.currentTarget.value);
         }}
@@ -28,7 +28,7 @@ const Home = () => {
       />
       <input
         type="password"
-        placeholder="ta"
+        placeholder="password"
         onChange={(event) => {
           setPassWord(event.currentTarget.value);
         }}
