@@ -19,6 +19,10 @@ const Home = () => {
     }
   };
 
+  const handleLockerOpen = () => {
+    lockerOpen().catch(console.error);
+  };
+
   const registerIcCard = async () => {
     const iotClient = new EduIotApiClient(userName, passWord, 'https://edu-iot.iniad.org');
 
@@ -28,6 +32,10 @@ const Home = () => {
     } catch {
       console.error('error');
     }
+  };
+
+  const handleRegisterIcCard = () => {
+    registerIcCard().catch(console.error);
   };
 
   return (
@@ -49,7 +57,7 @@ const Home = () => {
           }}
           value={passWord}
         />
-        <button onClick={lockerOpen}>ロッカーを開ける</button>
+        <button onClick={handleLockerOpen}>ロッカーを開ける</button>
       </section>
 
       <section>
@@ -69,7 +77,7 @@ const Home = () => {
           }}
           value={comment}
         />
-        <button onClick={registerIcCard}>ICカードを登録</button>
+        <button onClick={handleRegisterIcCard}>ICカードを登録</button>
       </section>
     </div>
   );
